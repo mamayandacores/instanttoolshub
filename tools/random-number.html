@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Number Generator - Secure & Free Tool</title>
+  <meta name="description" content="Generate secure random numbers with custom ranges. Includes dice roller, lottery picker, and number history.">
+  <meta name="keywords" content="random number generator, dice roller, lottery number picker">
+  <meta name="canonical" content="https://instanttoolshub.com/tools/random-number.html">
+  <meta property="og:title" content="Random Number Generator - Free Secure Tool">
+  <meta property="og:description" content="Generate random numbers with customizable ranges and presets.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%23e8ff47'>⚡</text></svg>">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <nav>
+    <div class="nav-container">
+      <a href="../index.html" class="logo">
+        <div class="logo-dot"></div>
+        ITH
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../tools.html">Tools</a></li>
+        <li><a href="../index.html#downloader">Downloaders</a></li>
+        <li><a href="../index.html#generators">Generators</a></li>
+        <li><a href="../index.html#content">Content</a></li>
+        <li><a href="../community.html">Community</a></li>
+        <li><a href="../support.html">Support</a></li>
+      </ul>
+      <div class="nav-cta">
+        <button class="btn btn-neon btn-sm">Get Started</button>
+        <button class="hamburger" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-nav">
+    <a href="../index.html">Home</a>
+    <a href="../tools.html">Tools</a>
+    <a href="../index.html#downloader">Downloaders</a>
+    <a href="../index.html#generators">Generators</a>
+    <a href="../index.html#content">Content</a>
+    <a href="../community.html">Community</a>
+    <a href="../support.html">Support</a>
+  </div>
+
+  <div class="ad ad-banner container"><!-- Google AdSense Banner 728x90 --></div>
+
+  <main>
+    <div class="breadcrumb container">
+      <a href="../index.html">Home</a> / <a href="../tools.html">Tools</a> / Random Number
+    </div>
+
+    <section class="hero container-sm">
+      <h1 class="hero-title">RANDOM<br>NUMBER</h1>
+      <p class="hero-subtitle">Generate secure random numbers with custom ranges and presets.</p>
+    </section>
+
+    <div class="ad ad-rect"><!-- Google AdSense Rectangle 336x280 --></div>
+
+    <section class="container-sm">
+      <div class="output-label">Generated Number:</div>
+      <div style="font-size: 64px; font-weight: bold; text-align: center; color: var(--color-neon); font-family: var(--font-mono); padding: var(--spacing-2xl); background: var(--bg-card); border-radius: var(--radius-lg); margin-bottom: var(--spacing-lg); animation: pulse 2s ease-in-out infinite;" id="display">0</div>
+
+      <div class="panel">
+        <div class="form-group">
+          <label>Minimum Number</label>
+          <input type="number" id="minNum" value="1" oninput="updatePresets()">
+        </div>
+
+        <div class="form-group">
+          <label>Maximum Number</label>
+          <input type="number" id="maxNum" value="100" oninput="updatePresets()">
+        </div>
+
+        <div class="form-group">
+          <label>Count (how many)</label>
+          <input type="number" id="count" value="1" min="1" max="100">
+        </div>
+
+        <div style="display: flex; gap: var(--spacing-sm); align-items: center; margin-bottom: var(--spacing-lg);">
+          <input type="checkbox" id="noRepeat">
+          <label for="noRepeat" style="margin: 0; margin-bottom: 0;">No repeated numbers</label>
+        </div>
+
+        <button class="btn btn-neon btn-lg" onclick="generate()">Generate</button>
+      </div>
+
+      <div style="margin-top: var(--spacing-2xl);">
+        <h3 style="font-weight: 600; margin-bottom: var(--spacing-md);">Quick Presets</h3>
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));">
+          <button class="btn btn-outline" onclick="setPreset(1, 6, 1); generate();">🎲 Dice (1-6)</button>
+          <button class="btn btn-outline" onclick="setPreset(0, 9, 1); generate();">Single Digit</button>
+          <button class="btn btn-outline" onclick="setPreset(1, 100, 1); generate();">1-100</button>
+          <button class="btn btn-outline" onclick="setPreset(1, 1000, 1); generate();">1-1000</button>
+          <button class="btn btn-outline" onclick="setPreset(1, 49, 6); generate();">Lottery</button>
+          <button class="btn btn-outline" onclick="setPreset(1, 52, 5); generate();">Card Deck</button>
+        </div>
+      </div>
+
+      <div id="multiResults" style="margin-top: var(--spacing-lg); display: none;">
+        <div class="output-label">Results:</div>
+        <div id="resultsList" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); gap: var(--spacing-sm);"></div>
+      </div>
+
+      <div style="margin-top: var(--spacing-2xl);">
+        <h3 style="font-weight: 600; margin-bottom: var(--spacing-md);">History (Last 20)</h3>
+        <div id="history" style="display: flex; gap: var(--spacing-sm); flex-wrap: wrap; align-items: center;"></div>
+        <button class="btn btn-outline btn-sm" onclick="clearHistory()" style="margin-top: var(--spacing-md);">Clear History</button>
+      </div>
+    </section>
+
+    <!-- Related Links -->
+    <section class="related-section container-sm">
+      <h3 class="related-title">Related Tools</h3>
+      <div class="related-grid">
+        <a href="../tools/password.html" class="related-item">
+          <div class="related-icon">🔐</div>
+          <div class="related-name">Password</div>
+        </a>
+        <a href="../tools/qr-generator.html" class="related-item">
+          <div class="related-icon">📱</div>
+          <div class="related-name">QR Code</div>
+        </a>
+        <a href="../tools/word-counter.html" class="related-item">
+          <div class="related-icon">📊</div>
+          <div class="related-name">Word Counter</div>
+        </a>
+        <a href="../tools/text-repeater.html" class="related-item">
+          <div class="related-icon">🔁</div>
+          <div class="related-name">Text Repeater</div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-left">
+        <div class="logo" style="margin: 0; font-size: 14px;">
+          <div class="logo-dot" style="width: 5px; height: 5px;"></div>
+          Instant Tools Hub
+        </div>
+        <span>&copy; 2025 All rights reserved</span>
+      </div>
+      <div class="footer-right">
+        <a href="../GUIDE.html">Beginner Guide</a>
+        <a href="../support.html">Support</a>
+        <a href="../community.html">Community</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="ad-sticky"><!-- Google AdSense Sticky 320x50 --></div>
+
+  <script src="../main.js"></script>
+  <script>
+    let history = JSON.parse(localStorage.getItem('randomHistory')) || [];
+
+    function getSecureRandom(min, max) {
+      const range = max - min + 1;
+      const randomArray = new Uint32Array(1);
+      window.crypto.getRandomValues(randomArray);
+      return min + (randomArray[0] % range);
+    }
+
+    function generate() {
+      const min = parseInt(document.getElementById('minNum').value);
+      const max = parseInt(document.getElementById('maxNum').value);
+      const count = parseInt(document.getElementById('count').value);
+      const noRepeat = document.getElementById('noRepeat').checked;
+
+      if (min > max) {
+        showToast('Min must be less than max');
+        return;
+      }
+
+      if (noRepeat && (max - min + 1) < count) {
+        showToast('Not enough numbers in range for unique numbers');
+        return;
+      }
+
+      let results = [];
+      if (count === 1) {
+        const num = getSecureRandom(min, max);
+        results = [num];
+        document.getElementById('display').textContent = num;
+        document.getElementById('multiResults').style.display = 'none';
+        history.unshift(num);
+      } else {
+        if (noRepeat) {
+          const range = [];
+          for (let i = min; i <= max; i++) range.push(i);
+          for (let i = 0; i < count; i++) {
+            const idx = getSecureRandom(0, range.length - 1);
+            results.push(range[idx]);
+            range.splice(idx, 1);
+          }
+        } else {
+          for (let i = 0; i < count; i++) {
+            results.push(getSecureRandom(min, max));
+          }
+        }
+        document.getElementById('multiResults').style.display = 'block';
+        const list = document.getElementById('resultsList');
+        list.innerHTML = results.map(n => `<div style="padding: var(--spacing-md); background: var(--bg-card); border: 1px solid var(--border-light); border-radius: var(--radius-md); text-align: center; font-weight: 600; color: var(--color-neon);">${n}</div>`).join('');
+        results.forEach(n => history.unshift(n));
+      }
+
+      if (history.length > 20) history = history.slice(0, 20);
+      localStorage.setItem('randomHistory', JSON.stringify(history));
+      updateHistory();
+    }
+
+    function setPreset(min, max, count) {
+      document.getElementById('minNum').value = min;
+      document.getElementById('maxNum').value = max;
+      document.getElementById('count').value = count;
+    }
+
+    function updatePresets() {
+      // Updates when min/max change
+    }
+
+    function updateHistory() {
+      const historyDiv = document.getElementById('history');
+      if (history.length === 0) {
+        historyDiv.innerHTML = '<span style="color: var(--text-tertiary);">No history yet</span>';
+        return;
+      }
+      historyDiv.innerHTML = history.map(n => `<span style="padding: 4px 8px; background: var(--bg-card); border: 1px solid var(--border-light); border-radius: 4px;">${n}</span>`).join('');
+    }
+
+    function clearHistory() {
+      history = [];
+      localStorage.removeItem('randomHistory');
+      updateHistory();
+      showToast('History cleared');
+    }
+
+    updateHistory();
+  </script>
+</body>
+</html>

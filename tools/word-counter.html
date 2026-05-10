@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Word Counter Online - Free Character & Word Count Tool</title>
+  <meta name="description" content="Free online word counter. Get real-time word, character, sentence, and paragraph counts. Check platform limits for Twitter, Instagram, YouTube.">
+  <meta name="keywords" content="word counter online free, character count tool, text analyzer">
+  <meta name="canonical" content="https://instanttoolshub.com/tools/word-counter.html">
+  <meta property="og:title" content="Word Counter - Free Online Tool">
+  <meta property="og:description" content="Count words, characters, and sentences in real-time with platform limits.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%23e8ff47'>⚡</text></svg>">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <nav>
+    <div class="nav-container">
+      <a href="../index.html" class="logo">
+        <div class="logo-dot"></div>
+        ITH
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../tools.html">Tools</a></li>
+        <li><a href="../index.html#downloader">Downloaders</a></li>
+        <li><a href="../index.html#generators">Generators</a></li>
+        <li><a href="../index.html#content">Content</a></li>
+        <li><a href="../community.html">Community</a></li>
+        <li><a href="../support.html">Support</a></li>
+      </ul>
+      <div class="nav-cta">
+        <button class="btn btn-neon btn-sm">Get Started</button>
+        <button class="hamburger" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-nav">
+    <a href="../index.html">Home</a>
+    <a href="../tools.html">Tools</a>
+    <a href="../index.html#downloader">Downloaders</a>
+    <a href="../index.html#generators">Generators</a>
+    <a href="../index.html#content">Content</a>
+    <a href="../community.html">Community</a>
+    <a href="../support.html">Support</a>
+  </div>
+
+  <div class="ad ad-banner container"><!-- Google AdSense Banner 728x90 --></div>
+
+  <main>
+    <div class="breadcrumb container">
+      <a href="../index.html">Home</a> / <a href="../tools.html">Tools</a> / Word Counter
+    </div>
+
+    <section class="hero container-sm">
+      <h1 class="hero-title">WORD<br>COUNTER</h1>
+      <p class="hero-subtitle">Live word, character, sentence, and paragraph counter with platform limits.</p>
+    </section>
+
+    <div class="ad ad-rect"><!-- Google AdSense Rectangle 336x280 --></div>
+
+    <section class="container-sm">
+      <textarea id="textArea" placeholder="Paste or type your text here..." style="font-size: 14px; min-height: 250px; margin-bottom: var(--spacing-lg);" oninput="updateStats()"></textarea>
+
+      <div class="stats-bar" style="margin-bottom: var(--spacing-lg);">
+        <div class="stat-item">
+          <div class="stat-value" id="wordCount">0</div>
+          <div class="stat-label">Words</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value" id="charCount">0</div>
+          <div class="stat-label">Characters</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value" id="charNoSpaceCount">0</div>
+          <div class="stat-label">Chars (no space)</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value" id="sentenceCount">0</div>
+          <div class="stat-label">Sentences</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value" id="paragraphCount">0</div>
+          <div class="stat-label">Paragraphs</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value" id="readTime">0m</div>
+          <div class="stat-label">Read Time</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: var(--spacing-md); margin-bottom: var(--spacing-2xl);">
+        <button class="btn btn-neon" onclick="copyText(document.getElementById('textArea').value)">Copy Text</button>
+        <button class="btn btn-outline" onclick="clearText()">Clear</button>
+      </div>
+    </section>
+
+    <div class="ad ad-mid container"><!-- Google AdSense Mid 728x90 --></div>
+
+    <section class="container-sm">
+      <h3 style="font-family: var(--font-display); font-size: 24px; margin-bottom: var(--spacing-lg);">Platform Limits</h3>
+      <div style="display: grid; gap: var(--spacing-lg);">
+        <div class="panel">
+          <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-sm);">
+            <span>Twitter/X (280 chars)</span>
+            <span id="twitterCount" style="color: var(--color-neon);">0/280</span>
+          </div>
+          <div class="strength-bar">
+            <div class="strength-fill" id="twitterBar" style="width: 0%;"></div>
+          </div>
+        </div>
+        <div class="panel">
+          <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-sm);">
+            <span>Instagram Caption (2200 chars)</span>
+            <span id="instagramCount" style="color: var(--color-neon);">0/2200</span>
+          </div>
+          <div class="strength-bar">
+            <div class="strength-fill" id="instagramBar" style="width: 0%;"></div>
+          </div>
+        </div>
+        <div class="panel">
+          <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-sm);">
+            <span>Instagram Bio (150 chars)</span>
+            <span id="bioCount" style="color: var(--color-neon);">0/150</span>
+          </div>
+          <div class="strength-bar">
+            <div class="strength-fill" id="bioBar" style="width: 0%;"></div>
+          </div>
+        </div>
+        <div class="panel">
+          <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-sm);">
+            <span>YouTube Title (100 chars)</span>
+            <span id="youtubeTitle" style="color: var(--color-neon);">0/100</span>
+          </div>
+          <div class="strength-bar">
+            <div class="strength-fill" id="youtubeTitleBar" style="width: 0%;"></div>
+          </div>
+        </div>
+        <div class="panel">
+          <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-sm);">
+            <span>YouTube Description (5000 chars)</span>
+            <span id="youtubeDesc" style="color: var(--color-neon);">0/5000</span>
+          </div>
+          <div class="strength-bar">
+            <div class="strength-fill" id="youtubeDescBar" style="width: 0%;"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Links -->
+    <section class="related-section container-sm">
+      <h3 class="related-title">Related Tools</h3>
+      <div class="related-grid">
+        <a href="../tools/text-repeater.html" class="related-item">
+          <div class="related-icon">🔁</div>
+          <div class="related-name">Text Repeater</div>
+        </a>
+        <a href="../tools/case-converter.html" class="related-item">
+          <div class="related-icon">Aa</div>
+          <div class="related-name">Case Converter</div>
+        </a>
+        <a href="../tools/stylish-text.html" class="related-item">
+          <div class="related-icon">🔤</div>
+          <div class="related-name">Stylish Text</div>
+        </a>
+        <a href="../generators/caption-generator.html" class="related-item">
+          <div class="related-icon">💬</div>
+          <div class="related-name">Captions</div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-left">
+        <div class="logo" style="margin: 0; font-size: 14px;">
+          <div class="logo-dot" style="width: 5px; height: 5px;"></div>
+          Instant Tools Hub
+        </div>
+        <span>&copy; 2025 All rights reserved</span>
+      </div>
+      <div class="footer-right">
+        <a href="../GUIDE.html">Beginner Guide</a>
+        <a href="../support.html">Support</a>
+        <a href="../community.html">Community</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="ad-sticky"><!-- Google AdSense Sticky 320x50 --></div>
+
+  <script src="../main.js"></script>
+  <script>
+    function updateStats() {
+      const text = document.getElementById('textArea').value;
+
+      // Words
+      const words = text.trim() ? text.trim().split(/\s+/).length : 0;
+      document.getElementById('wordCount').textContent = words;
+
+      // Characters
+      const chars = text.length;
+      document.getElementById('charCount').textContent = chars;
+
+      // Characters without spaces
+      const charsNoSpace = text.replace(/\s/g, '').length;
+      document.getElementById('charNoSpaceCount').textContent = charsNoSpace;
+
+      // Sentences
+      const sentences = text.split(/[.!?]+/).filter(s => s.trim()).length;
+      document.getElementById('sentenceCount').textContent = sentences;
+
+      // Paragraphs
+      const paragraphs = text.split('\n\n').filter(p => p.trim()).length || (text.trim() ? 1 : 0);
+      document.getElementById('paragraphCount').textContent = paragraphs;
+
+      // Read time (200 words per minute)
+      const readTime = Math.ceil(words / 200) || 0;
+      document.getElementById('readTime').textContent = readTime + 'm';
+
+      // Platform limits
+      updatePlatformLimits(chars);
+    }
+
+    function updatePlatformLimits(chars) {
+      const limits = {
+        twitter: 280,
+        instagram: 2200,
+        bio: 150,
+        youtubeTitle: 100,
+        youtubeDesc: 5000
+      };
+
+      const data = {
+        twitter: { count: 'twitterCount', bar: 'twitterBar', limit: limits.twitter },
+        instagram: { count: 'instagramCount', bar: 'instagramBar', limit: limits.instagram },
+        bio: { count: 'bioCount', bar: 'bioBar', limit: limits.bio },
+        youtubeTitle: { count: 'youtubeTitle', bar: 'youtubeTitleBar', limit: limits.youtubeTitle },
+        youtubeDesc: { count: 'youtubeDesc', bar: 'youtubeDescBar', limit: limits.youtubeDesc }
+      };
+
+      Object.keys(data).forEach(key => {
+        const limit = data[key].limit;
+        const percent = Math.min((chars / limit) * 100, 100);
+        document.getElementById(data[key].count).textContent = chars + '/' + limit;
+        const bar = document.getElementById(data[key].bar);
+        bar.style.width = percent + '%';
+        bar.className = 'strength-fill ' + (chars > limit ? 'strength-weak' : chars > limit * 0.8 ? 'strength-fair' : 'strength-strong');
+      });
+    }
+
+    function clearText() {
+      document.getElementById('textArea').value = '';
+      updateStats();
+    }
+
+    updateStats();
+  </script>
+</body>
+</html>

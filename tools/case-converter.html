@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Converter - Uppercase, Lowercase, Title Case Free Tool</title>
+  <meta name="description" content="Convert text between 9 different case styles: uppercase, lowercase, title case, sentence case, camelCase, snake_case, and more.">
+  <meta name="keywords" content="case converter online, uppercase lowercase converter, text case changer">
+  <meta name="canonical" content="https://instanttoolshub.com/tools/case-converter.html">
+  <meta property="og:title" content="Case Converter - Free Online Tool">
+  <meta property="og:description" content="Convert text to 9 different case styles instantly.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%23e8ff47'>⚡</text></svg>">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <nav>
+    <div class="nav-container">
+      <a href="../index.html" class="logo">
+        <div class="logo-dot"></div>
+        ITH
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../tools.html">Tools</a></li>
+        <li><a href="../index.html#downloader">Downloaders</a></li>
+        <li><a href="../index.html#generators">Generators</a></li>
+        <li><a href="../index.html#content">Content</a></li>
+        <li><a href="../community.html">Community</a></li>
+        <li><a href="../support.html">Support</a></li>
+      </ul>
+      <div class="nav-cta">
+        <button class="btn btn-neon btn-sm">Get Started</button>
+        <button class="hamburger" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-nav">
+    <a href="../index.html">Home</a>
+    <a href="../tools.html">Tools</a>
+    <a href="../index.html#downloader">Downloaders</a>
+    <a href="../index.html#generators">Generators</a>
+    <a href="../index.html#content">Content</a>
+    <a href="../community.html">Community</a>
+    <a href="../support.html">Support</a>
+  </div>
+
+  <div class="ad ad-banner container"><!-- Google AdSense Banner 728x90 --></div>
+
+  <main>
+    <div class="breadcrumb container">
+      <a href="../index.html">Home</a> / <a href="../tools.html">Tools</a> / Case Converter
+    </div>
+
+    <section class="hero container-sm">
+      <h1 class="hero-title">CASE<br>CONVERTER</h1>
+      <p class="hero-subtitle">Convert text to 9 different case styles instantly.</p>
+    </section>
+
+    <div class="ad ad-rect"><!-- Google AdSense Rectangle 336x280 --></div>
+
+    <section class="container-sm">
+      <div class="panel">
+        <div class="form-group">
+          <label>Enter Text</label>
+          <textarea id="inputText" placeholder="Type or paste text here..." oninput="convertAll()"></textarea>
+        </div>
+      </div>
+
+      <div id="results" style="display: grid; gap: var(--spacing-lg); margin-top: var(--spacing-lg);"></div>
+    </section>
+
+    <div class="ad ad-mid container"><!-- Google AdSense Mid 728x90 --></div>
+
+    <!-- Related Links -->
+    <section class="related-section container-sm">
+      <h3 class="related-title">Related Tools</h3>
+      <div class="related-grid">
+        <a href="../tools/stylish-text.html" class="related-item">
+          <div class="related-icon">🔤</div>
+          <div class="related-name">Stylish Text</div>
+        </a>
+        <a href="../tools/word-counter.html" class="related-item">
+          <div class="related-icon">📊</div>
+          <div class="related-name">Word Counter</div>
+        </a>
+        <a href="../tools/text-repeater.html" class="related-item">
+          <div class="related-icon">🔁</div>
+          <div class="related-name">Text Repeater</div>
+        </a>
+        <a href="../tools/password.html" class="related-item">
+          <div class="related-icon">🔐</div>
+          <div class="related-name">Password</div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-left">
+        <div class="logo" style="margin: 0; font-size: 14px;">
+          <div class="logo-dot" style="width: 5px; height: 5px;"></div>
+          Instant Tools Hub
+        </div>
+        <span>&copy; 2025 All rights reserved</span>
+      </div>
+      <div class="footer-right">
+        <a href="../GUIDE.html">Beginner Guide</a>
+        <a href="../support.html">Support</a>
+        <a href="../community.html">Community</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="ad-sticky"><!-- Google AdSense Sticky 320x50 --></div>
+
+  <script src="../main.js"></script>
+  <script>
+    const conversions = [
+      { name: 'UPPERCASE', fn: (text) => text.toUpperCase() },
+      { name: 'lowercase', fn: (text) => text.toLowerCase() },
+      { name: 'Title Case', fn: (text) => text.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ') },
+      { name: 'Sentence case', fn: (text) => text.charAt(0).toUpperCase() + text.slice(1).toLowerCase() },
+      { name: 'camelCase', fn: (text) => text.split(' ').map((word, i) => i === 0 ? word.toLowerCase() : word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join('') },
+      { name: 'snake_case', fn: (text) => text.toLowerCase().replace(/\s+/g, '_') },
+      { name: 'kebab-case', fn: (text) => text.toLowerCase().replace(/\s+/g, '-') },
+      { name: 'aLtErNaTiNg', fn: (text) => text.split('').map((char, i) => i % 2 === 0 ? char.toLowerCase() : char.toUpperCase()).join('') },
+      { name: 'Reverse', fn: (text) => text.split('').reverse().join('') }
+    ];
+
+    function convertAll() {
+      const text = document.getElementById('inputText').value;
+      const results = document.getElementById('results');
+      results.innerHTML = '';
+
+      if (!text) {
+        results.innerHTML = '<p style="color: var(--text-tertiary); text-align: center;">Enter text to see conversions</p>';
+        return;
+      }
+
+      conversions.forEach(conv => {
+        const result = conv.fn(text);
+        const div = document.createElement('div');
+        div.className = 'panel';
+        div.innerHTML = `
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-md);">
+            <span style="font-weight: 600;">${conv.name}</span>
+            <button class="btn btn-sm btn-neon" onclick="copyText('${result.replace(/'/g, "\\'")}')">Copy</button>
+          </div>
+          <div class="output-box" style="margin: 0;">${result}</div>
+        `;
+        results.appendChild(div);
+      });
+    }
+  </script>
+</body>
+</html>

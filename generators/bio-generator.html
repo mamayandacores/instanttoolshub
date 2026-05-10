@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instagram Bio Generator - 200+ Bios 2025 Free</title>
+  <meta name="description" content="Generate 200+ Instagram bio ideas by mood. Cool, funny, aesthetic, motivation bios with emojis. Copy and paste ready.">
+  <meta name="keywords" content="instagram bio generator free 2025, best instagram bio, cool instagram bios">
+  <meta name="canonical" content="https://instanttoolshub.com/generators/bio-generator.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%23e8ff47'>⚡</text></svg>">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <nav>
+    <div class="nav-container">
+      <a href="../index.html" class="logo">
+        <div class="logo-dot"></div>
+        ITH
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../tools.html">Tools</a></li>
+        <li><a href="../index.html#downloader">Downloaders</a></li>
+        <li><a href="../index.html#generators">Generators</a></li>
+        <li><a href="../index.html#content">Content</a></li>
+        <li><a href="../community.html">Community</a></li>
+        <li><a href="../support.html">Support</a></li>
+      </ul>
+      <div class="nav-cta">
+        <button class="btn btn-neon btn-sm">Get Started</button>
+        <button class="hamburger" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-nav">
+    <a href="../index.html">Home</a>
+    <a href="../tools.html">Tools</a>
+    <a href="../index.html#downloader">Downloaders</a>
+    <a href="../index.html#generators">Generators</a>
+    <a href="../index.html#content">Content</a>
+    <a href="../community.html">Community</a>
+    <a href="../support.html">Support</a>
+  </div>
+
+  <div class="ad ad-banner container"><!-- Google AdSense Banner 728x90 --></div>
+
+  <main>
+    <div class="breadcrumb container">
+      <a href="../index.html">Home</a> / <a href="../tools.html">Tools</a> / Bio Generator
+    </div>
+
+    <section class="hero container-sm">
+      <h1 class="hero-title" style="font-family: var(--font-serif); font-style: italic;">INSTAGRAM<br>BIO</h1>
+      <p class="hero-subtitle">200+ personalized Instagram bios by mood.</p>
+    </section>
+
+    <div class="ad ad-rect"><!-- Google AdSense Rectangle 336x280 --></div>
+
+    <section class="container-sm">
+      <div class="panel">
+        <div class="form-group">
+          <label>Your Name (Optional)</label>
+          <input type="text" id="yourName" placeholder="Leave empty for generic bios" oninput="generateBios()">
+        </div>
+
+        <div class="form-group">
+          <label>Keyword (Optional)</label>
+          <input type="text" id="keyword" placeholder="e.g., travel, coding, fitness" oninput="generateBios()">
+        </div>
+      </div>
+
+      <h3 style="font-family: var(--font-display); font-size: 24px; margin-bottom: var(--spacing-lg);">Choose Mood</h3>
+      <div class="filters" style="margin-bottom: var(--spacing-xl);">
+        <button class="f-chip on" onclick="setCategory('all'); this.parentElement.querySelectorAll('.f-chip').forEach(c => c.classList.remove('on')); this.classList.add('on'); generateBios();">All</button>
+        <button class="f-chip" onclick="setCategory('attitude'); this.parentElement.querySelectorAll('.f-chip').forEach(c => c.classList.remove('on')); this.classList.add('on'); generateBios();">😎 Attitude</button>
+        <button class="f-chip" onclick="setCategory('love'); this.parentElement.querySelectorAll('.f-chip').forEach(c => c.classList.remove('on')); this.classList.add('on'); generateBios();">❤️ Love</button>
+        <button class="f-chip" onclick="setCategory('funny'); this.parentElement.querySelectorAll('.f-chip').forEach(c => c.classList.remove('on')); this.classList.add('on'); generateBios();">😂 Funny</button>
+        <button class="f-chip" onclick="setCategory('motivation'); this.parentElement.querySelectorAll('.f-chip').forEach(c => c.classList.remove('on')); this.classList.add('on'); generateBios();">💪 Motivation</button>
+        <button class="f-chip" onclick="setCategory('aesthetic'); this.parentElement.querySelectorAll('.f-chip').forEach(c => c.classList.remove('on')); this.classList.add('on'); generateBios();">✨ Aesthetic</button>
+        <button class="f-chip" onclick="setCategory('savage'); this.parentElement.querySelectorAll('.f-chip').forEach(c => c.classList.remove('on')); this.classList.add('on'); generateBios();">🔥 Savage</button>
+        <button class="f-chip" onclick="setCategory('travel'); this.parentElement.querySelectorAll('.f-chip').forEach(c => c.classList.remove('on')); this.classList.add('on'); generateBios();">✈️ Travel</button>
+        <button class="f-chip" onclick="setCategory('fitness'); this.parentElement.querySelectorAll('.f-chip').forEach(c => c.classList.remove('on')); this.classList.add('on'); generateBios();">🏋️ Fitness</button>
+      </div>
+
+      <div id="bios" style="display: grid; gap: var(--spacing-sm); margin-bottom: var(--spacing-lg);"></div>
+
+      <button class="btn btn-neon btn-lg" onclick="generateBios()">Generate Again</button>
+    </section>
+
+    <div class="ad ad-mid container"><!-- Google AdSense Mid 728x90 --></div>
+
+    <!-- Related -->
+    <section class="related-section container-sm">
+      <h3 class="related-title">Related Tools</h3>
+      <div class="related-grid">
+        <a href="../content/instagram-bios.html" class="related-item">
+          <div class="related-icon">📝</div>
+          <div class="related-name">Bio Library</div>
+        </a>
+        <a href="../generators/caption-generator.html" class="related-item">
+          <div class="related-icon">💬</div>
+          <div class="related-name">Captions</div>
+        </a>
+        <a href="../generators/username-generator.html" class="related-item">
+          <div class="related-icon">👤</div>
+          <div class="related-name">Usernames</div>
+        </a>
+        <a href="../tools/word-counter.html" class="related-item">
+          <div class="related-icon">📊</div>
+          <div class="related-name">Word Counter</div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-left">
+        <div class="logo" style="margin: 0; font-size: 14px;">
+          <div class="logo-dot" style="width: 5px; height: 5px;"></div>
+          Instant Tools Hub
+        </div>
+        <span>&copy; 2025 All rights reserved</span>
+      </div>
+      <div class="footer-right">
+        <a href="../GUIDE.html">Beginner Guide</a>
+        <a href="../support.html">Support</a>
+        <a href="../community.html">Community</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="ad-sticky"><!-- Google AdSense Sticky 320x50 --></div>
+
+  <script src="../main.js"></script>
+  <script>
+    let currentCategory = 'all';
+
+    const bioData = {
+      attitude: ['Living my best life 🔥', 'Unapologetically me ✨', 'Too glam to give a damn 💎', 'Salty but sweet 🍋', 'Real queens fix each other\'s crowns 👑'],
+      love: ['Love is all you need ❤️', 'Forever in love with life 💕', 'Spreading love & light ✨', 'Happily ever after starts here 💍', 'My heart is full 🥰'],
+      funny: ['Professional overthinker 🤔', 'Not lazy, just on energy-saving mode 😴', 'I\'m not weird, I\'m limited edition 🎨', 'Talk to me after my coffee ☕', 'My bed is a magical place 🛏️'],
+      motivation: ['Hustle hard, dream bigger 💪', 'Making it happen 🚀', 'Your only limit is you 🌟', 'Level up every day 📈', 'Blessed and grateful 🙏'],
+      aesthetic: ['Aesthetic vibes only ✨', 'Soft but savage 💫', 'Creating my own sunshine 🌅', 'Keep it simple and elegant', 'Minimalist soul 🍃'],
+      savage: ['Too busy being awesome 🔥', 'Don\'t react, just elevate 📈', 'Zero drama energy', 'The definition of a vibe', 'Real ones know 🤐'],
+      travel: ['Wanderlust warrior ✈️', 'Collecting memories and stamps 🗺️', 'Adventure is calling 🏔️', 'See the world with me 🌍', 'Passport filled, stories untold 📸'],
+      fitness: ['Stronger every day 💪', 'Gym is my therapy 🏋️', 'Fit mind, fit body 🧠', 'No excuses, only results 🎯', 'Grind now, shine later ⭐']
+    };
+
+    function setCategory(cat) {
+      currentCategory = cat;
+    }
+
+    function generateBios() {
+      const name = document.getElementById('yourName').value;
+      const keyword = document.getElementById('keyword').value;
+      const biosContainer = document.getElementById('bios');
+      biosContainer.innerHTML = '';
+
+      let bios = [];
+      if (currentCategory === 'all') {
+        Object.values(bioData).forEach(category => {
+          bios = bios.concat(category);
+        });
+      } else {
+        bios = bioData[currentCategory] || [];
+      }
+
+      // Personalize if name is provided
+      if (name) {
+        bios = bios.map(bio => bio.replace(/me|I|my/, name));
+      }
+
+      // Shuffle and take first 5
+      const selected = bios.sort(() => Math.random() - 0.5).slice(0, 5);
+
+      if (selected.length === 0) {
+        biosContainer.innerHTML = '<p style="color: var(--text-tertiary);">No bios found</p>';
+        return;
+      }
+
+      selected.forEach((bio, idx) => {
+        const div = document.createElement('div');
+        div.className = 'content-item';
+        div.innerHTML = `
+          <div class="content-text">${bio}</div>
+          <button class="btn btn-sm btn-neon" onclick="copyText('${bio.replace(/'/g, "\\'")}')">Copy</button>
+        `;
+        biosContainer.appendChild(div);
+
+        if ((idx + 1) % 7 === 0) {
+          const ad = document.createElement('div');
+          ad.className = 'ad';
+          ad.style.gridColumn = '1 / -1';
+          biosContainer.appendChild(ad);
+        }
+      });
+    }
+
+    generateBios();
+  </script>
+</body>
+</html>

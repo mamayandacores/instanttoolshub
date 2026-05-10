@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support & Contact - Instant Tools Hub</title>
+  <meta name="description" content="Contact support, report bugs, or suggest new tools for Instant Tools Hub.">
+  <meta name="keywords" content="contact, support, feedback">
+  <meta name="canonical" content="https://instanttoolshub.com/support.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%23e8ff47'>⚡</text></svg>">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <nav>
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <div class="logo-dot"></div>
+        ITH
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tools.html">Tools</a></li>
+        <li><a href="index.html#downloader">Downloaders</a></li>
+        <li><a href="index.html#generators">Generators</a></li>
+        <li><a href="index.html#content">Content</a></li>
+        <li><a href="community.html">Community</a></li>
+        <li><a href="support.html">Support</a></li>
+      </ul>
+      <div class="nav-cta">
+        <button class="btn btn-neon btn-sm">Get Started</button>
+        <button class="hamburger" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-nav">
+    <a href="index.html">Home</a>
+    <a href="tools.html">Tools</a>
+    <a href="index.html#downloader">Downloaders</a>
+    <a href="index.html#generators">Generators</a>
+    <a href="index.html#content">Content</a>
+    <a href="community.html">Community</a>
+    <a href="support.html">Support</a>
+  </div>
+
+  <div class="ad ad-banner container"><!-- Google AdSense Banner 728x90 --></div>
+
+  <main>
+    <section class="hero container-sm">
+      <h1 class="hero-title">SUPPORT</h1>
+      <p class="hero-subtitle">Have questions? Found a bug? Want to suggest a tool? Let us know!</p>
+    </section>
+
+    <div class="ad ad-rect"><!-- Google AdSense Rectangle 336x280 --></div>
+
+    <section class="container-sm">
+      <div class="panel">
+        <h3 style="font-weight: 600; margin-bottom: var(--spacing-lg);">Send us a message</h3>
+
+        <div class="form-group">
+          <label>Message Type</label>
+          <div class="seg" style="margin-bottom: var(--spacing-lg);">
+            <button class="seg-btn on" onclick="setType('general'); this.parentElement.querySelectorAll('.seg-btn').forEach(b => b.classList.remove('on')); this.classList.add('on');">General</button>
+            <button class="seg-btn" onclick="setType('bug'); this.parentElement.querySelectorAll('.seg-btn').forEach(b => b.classList.remove('on')); this.classList.add('on');">Bug Report</button>
+            <button class="seg-btn" onclick="setType('suggest'); this.parentElement.querySelectorAll('.seg-btn').forEach(b => b.classList.remove('on')); this.classList.add('on');">Suggest Tool</button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" id="name" placeholder="Your name (optional)">
+        </div>
+
+        <div class="form-group">
+          <label>Your Email</label>
+          <input type="email" id="email" placeholder="your@email.com (optional)">
+        </div>
+
+        <div id="toolField" class="form-group" style="display: none;">
+          <label>Which Tool?</label>
+          <input type="text" id="tool" placeholder="Name of the tool">
+        </div>
+
+        <div class="form-group">
+          <label>Subject</label>
+          <input type="text" id="subject" placeholder="Brief subject">
+        </div>
+
+        <div class="form-group">
+          <label>Message</label>
+          <textarea id="message" placeholder="Your message here..." style="min-height: 150px;"></textarea>
+        </div>
+
+        <button class="btn btn-neon btn-lg" onclick="sendMessage()">Send Message</button>
+      </div>
+    </section>
+
+    <div class="ad ad-mid container"><!-- Google AdSense Mid 728x90 --></div>
+
+    <section class="container-sm">
+      <h3 style="font-family: var(--font-display); font-size: 24px; margin-bottom: var(--spacing-lg);">❓ Frequently Asked Questions</h3>
+
+      <div style="display: grid; gap: var(--spacing-lg);">
+        <div class="panel">
+          <h4 style="font-weight: 600; margin-bottom: var(--spacing-sm);">Are all tools free?</h4>
+          <p style="color: var(--text-secondary); font-size: 14px;">Yes! All tools are 100% free. No registration, no payments, no hidden fees.</p>
+        </div>
+
+        <div class="panel">
+          <h4 style="font-weight: 600; margin-bottom: var(--spacing-sm);">Do you save my data?</h4>
+          <p style="color: var(--text-secondary); font-size: 14px;">No. Most tools process data locally on your device. We don't store personal information.</p>
+        </div>
+
+        <div class="panel">
+          <h4 style="font-weight: 600; margin-bottom: var(--spacing-sm);">Why is there a tool down?</h4>
+          <p style="color: var(--text-secondary); font-size: 14px;">External API tools (TikTok downloader) may occasionally be unavailable. Try again later or use alternative services listed on the page.</p>
+        </div>
+
+        <div class="panel">
+          <h4 style="font-weight: 600; margin-bottom: var(--spacing-sm);">How do I report copyright issues?</h4>
+          <p style="color: var(--text-secondary); font-size: 14px;">Contact us via the support form above with details. We take copyright seriously.</p>
+        </div>
+
+        <div class="panel">
+          <h4 style="font-weight: 600; margin-bottom: var(--spacing-sm);">Can you add more tools?</h4>
+          <p style="color: var(--text-secondary); font-size: 14px;">Yes! Use the support form to suggest tools. We regularly add new features based on feedback.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-left">
+        <div class="logo" style="margin: 0; font-size: 14px;">
+          <div class="logo-dot" style="width: 5px; height: 5px;"></div>
+          Instant Tools Hub
+        </div>
+        <span>&copy; 2025 All rights reserved</span>
+      </div>
+      <div class="footer-right">
+        <a href="GUIDE.html">Beginner Guide</a>
+        <a href="support.html">Support</a>
+        <a href="community.html">Community</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="ad-sticky"><!-- Google AdSense Sticky 320x50 --></div>
+
+  <script src="main.js"></script>
+  <script>
+    let messageType = 'general';
+
+    function setType(type) {
+      messageType = type;
+      document.getElementById('toolField').style.display = type === 'bug' ? 'block' : 'none';
+    }
+
+    function sendMessage() {
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value;
+
+      if (!subject || !message) {
+        showToast('Please fill in subject and message');
+        return;
+      }
+
+      let messages = JSON.parse(localStorage.getItem('support_messages')) || [];
+      messages.push({
+        type: messageType,
+        name,
+        email,
+        subject,
+        message,
+        tool: messageType === 'bug' ? document.getElementById('tool').value : '',
+        date: new Date().toLocaleString(),
+        read: false
+      });
+      localStorage.setItem('support_messages', JSON.stringify(messages));
+
+      document.getElementById('name').value = '';
+      document.getElementById('email').value = '';
+      document.getElementById('subject').value = '';
+      document.getElementById('message').value = '';
+      document.getElementById('tool').value = '';
+
+      showToast('Message sent! Thank you for your feedback.');
+    }
+  </script>
+</body>
+</html>

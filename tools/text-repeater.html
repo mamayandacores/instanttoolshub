@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Repeater Online - Repeat Text & Emoji Free Tool</title>
+  <meta name="description" content="Repeat any text or emoji multiple times with custom separators. Free online text repeater tool with 500+ repeat limit.">
+  <meta name="keywords" content="text repeater online free, repeat text emoji tool, text generator">
+  <meta name="canonical" content="https://instanttoolshub.com/tools/text-repeater.html">
+  <meta property="og:title" content="Text Repeater - Repeat Text & Emoji Online">
+  <meta property="og:description" content="Free online text repeater. Repeat any text up to 500 times with separators.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%23e8ff47'>⚡</text></svg>">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <nav>
+    <div class="nav-container">
+      <a href="../index.html" class="logo">
+        <div class="logo-dot"></div>
+        ITH
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../tools.html">Tools</a></li>
+        <li><a href="../index.html#downloader">Downloaders</a></li>
+        <li><a href="../index.html#generators">Generators</a></li>
+        <li><a href="../index.html#content">Content</a></li>
+        <li><a href="../community.html">Community</a></li>
+        <li><a href="../support.html">Support</a></li>
+      </ul>
+      <div class="nav-cta">
+        <button class="btn btn-neon btn-sm">Get Started</button>
+        <button class="hamburger" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-nav">
+    <a href="../index.html">Home</a>
+    <a href="../tools.html">Tools</a>
+    <a href="../index.html#downloader">Downloaders</a>
+    <a href="../index.html#generators">Generators</a>
+    <a href="../index.html#content">Content</a>
+    <a href="../community.html">Community</a>
+    <a href="../support.html">Support</a>
+  </div>
+
+  <div class="ad ad-banner container"><!-- Google AdSense Banner 728x90 --></div>
+
+  <main>
+    <div class="breadcrumb container">
+      <a href="../index.html">Home</a> / <a href="../tools.html">Tools</a> / Text Repeater
+    </div>
+
+    <section class="hero container-sm">
+      <h1 class="hero-title">TEXT<br>REPEATER</h1>
+      <p class="hero-subtitle">Repeat any text or emoji up to 500 times with custom separators.</p>
+    </section>
+
+    <div class="ad ad-rect"><!-- Google AdSense Rectangle 336x280 --></div>
+
+    <section class="container-sm">
+      <div class="panel">
+        <div class="form-group">
+          <label>Text or Emoji</label>
+          <input type="text" id="textInput" placeholder="Enter text or emoji..." oninput="updateOutput()">
+        </div>
+
+        <div class="form-group">
+          <label>Repeat Count: <span id="countDisplay">10</span></label>
+          <input type="range" id="repeatCount" min="1" max="500" value="10" oninput="updateCountDisplay(); updateOutput();">
+          <input type="number" id="repeatNumber" min="1" max="500" value="10" oninput="syncSlider(); updateOutput();" style="width: 60px; margin-left: var(--spacing-sm);">
+        </div>
+
+        <div class="form-group">
+          <label>Separator</label>
+          <div class="seg" style="margin-bottom: var(--spacing-md);">
+            <button class="seg-btn on" onclick="setSeparator(''); this.parentElement.querySelectorAll('.seg-btn').forEach(b => b.classList.remove('on')); this.classList.add('on'); updateOutput();">None</button>
+            <button class="seg-btn" onclick="setSeparator(' '); this.parentElement.querySelectorAll('.seg-btn').forEach(b => b.classList.remove('on')); this.classList.add('on'); updateOutput();">Space</button>
+            <button class="seg-btn" onclick="setSeparator(','); this.parentElement.querySelectorAll('.seg-btn').forEach(b => b.classList.remove('on')); this.classList.add('on'); updateOutput();">Comma</button>
+            <button class="seg-btn" onclick="setSeparator('|'); this.parentElement.querySelectorAll('.seg-btn').forEach(b => b.classList.remove('on')); this.classList.add('on'); updateOutput();">Pipe</button>
+            <button class="seg-btn" onclick="setSeparator('\n'); this.parentElement.querySelectorAll('.seg-btn').forEach(b => b.classList.remove('on')); this.classList.add('on'); updateOutput();">New Line</button>
+            <button class="seg-btn" onclick="setSeparator('.'); this.parentElement.querySelectorAll('.seg-btn').forEach(b => b.classList.remove('on')); this.classList.add('on'); updateOutput();">Dot</button>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: var(--spacing-sm); align-items: center; margin-bottom: var(--spacing-lg);">
+          <input type="checkbox" id="emojiCheck">
+          <label for="emojiCheck" style="margin: 0; margin-bottom: 0;">Add emoji after each repeat</label>
+        </div>
+
+        <button class="btn btn-neon btn-lg" onclick="copyOutput()">Copy Result</button>
+      </div>
+
+      <div class="output-label">Result: <span id="charCount" style="color: var(--color-neon); margin-left: var(--spacing-sm);">0 characters</span></div>
+      <div class="output-box" id="output">Start typing to see result...</div>
+    </section>
+
+    <div class="ad ad-mid container"><!-- Google AdSense Mid 728x90 --></div>
+
+    <!-- Related Links -->
+    <section class="related-section container-sm">
+      <h3 class="related-title">Related Tools</h3>
+      <div class="related-grid">
+        <a href="../tools/stylish-text.html" class="related-item">
+          <div class="related-icon">🔤</div>
+          <div class="related-name">Stylish Text</div>
+        </a>
+        <a href="../tools/case-converter.html" class="related-item">
+          <div class="related-icon">Aa</div>
+          <div class="related-name">Case Converter</div>
+        </a>
+        <a href="../tools/word-counter.html" class="related-item">
+          <div class="related-icon">📊</div>
+          <div class="related-name">Word Counter</div>
+        </a>
+        <a href="../tools/whatsapp.html" class="related-item">
+          <div class="related-icon">💬</div>
+          <div class="related-name">WhatsApp Direct</div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-left">
+        <div class="logo" style="margin: 0; font-size: 14px;">
+          <div class="logo-dot" style="width: 5px; height: 5px;"></div>
+          Instant Tools Hub
+        </div>
+        <span>&copy; 2025 All rights reserved</span>
+      </div>
+      <div class="footer-right">
+        <a href="../GUIDE.html">Beginner Guide</a>
+        <a href="../support.html">Support</a>
+        <a href="../community.html">Community</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="ad-sticky"><!-- Google AdSense Sticky 320x50 --></div>
+
+  <script src="../main.js"></script>
+  <script>
+    let currentSeparator = '';
+
+    function setSeparator(sep) {
+      currentSeparator = sep;
+    }
+
+    function syncSlider() {
+      const number = parseInt(document.getElementById('repeatNumber').value);
+      document.getElementById('repeatCount').value = number;
+      updateCountDisplay();
+    }
+
+    function updateCountDisplay() {
+      const count = document.getElementById('repeatCount').value;
+      document.getElementById('repeatNumber').value = count;
+      document.getElementById('countDisplay').textContent = count;
+    }
+
+    function updateOutput() {
+      const text = document.getElementById('textInput').value;
+      const count = parseInt(document.getElementById('repeatCount').value);
+      const addEmoji = document.getElementById('emojiCheck').checked;
+
+      if (!text) {
+        document.getElementById('output').textContent = 'Start typing to see result...';
+        document.getElementById('charCount').textContent = '0 characters';
+        return;
+      }
+
+      let result = [];
+      for (let i = 0; i < count; i++) {
+        result.push(text);
+        if (addEmoji && i < count - 1) {
+          result.push('😀');
+        }
+      }
+
+      const output = result.join(currentSeparator);
+      document.getElementById('output').textContent = output;
+      document.getElementById('charCount').textContent = output.length + ' characters';
+    }
+
+    function copyOutput() {
+      const text = document.getElementById('output').textContent;
+      if (text === 'Start typing to see result...') {
+        showToast('Please generate text first');
+        return;
+      }
+      copyText(text);
+    }
+  </script>
+</body>
+</html>

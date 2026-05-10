@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>200+ Instagram Captions 2025 - Copy Paste Ready</title>
+  <meta name="description" content="200+ Instagram photo captions by category. Selfie, travel, food, friends, motivation captions with emojis.">
+  <meta name="keywords" content="instagram captions 2025, best photo captions, copy paste captions">
+  <meta name="canonical" content="https://instanttoolshub.com/content/captions.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%23e8ff47'>⚡</text></svg>">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <nav>
+    <div class="nav-container">
+      <a href="../index.html" class="logo">
+        <div class="logo-dot"></div>
+        ITH
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../tools.html">Tools</a></li>
+        <li><a href="../index.html#downloader">Downloaders</a></li>
+        <li><a href="../index.html#generators">Generators</a></li>
+        <li><a href="../index.html#content">Content</a></li>
+        <li><a href="../community.html">Community</a></li>
+        <li><a href="../support.html">Support</a></li>
+      </ul>
+      <div class="nav-cta">
+        <button class="btn btn-neon btn-sm">Get Started</button>
+        <button class="hamburger" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-nav">
+    <a href="../index.html">Home</a>
+    <a href="../tools.html">Tools</a>
+    <a href="../index.html#downloader">Downloaders</a>
+    <a href="../index.html#generators">Generators</a>
+    <a href="../index.html#content">Content</a>
+    <a href="../community.html">Community</a>
+    <a href="../support.html">Support</a>
+  </div>
+
+  <div class="ad ad-banner container"><!-- Google AdSense Banner 728x90 --></div>
+
+  <main>
+    <section class="hero container-sm">
+      <h1 class="hero-title" style="font-family: var(--font-serif); font-style: italic;">CAPTIONS</h1>
+      <p class="hero-subtitle">200+ Instagram captions ready to copy.</p>
+    </section>
+
+    <div class="ad ad-rect"><!-- Google AdSense Rectangle 336x280 --></div>
+
+    <section class="container-sm">
+      <div class="filters" style="margin-bottom: var(--spacing-xl);">
+        <button class="f-chip on" onclick="setCategory('all'); this.parentElement.querySelectorAll('.f-chip').forEach(c => c.classList.remove('on')); this.classList.add('on'); renderCaptions();">All</button>
+        <button class="f-chip" onclick="setCategory('selfie'); this.parentElement.querySelectorAll('.f-chip').forEach(c => c.classList.remove('on')); this.classList.add('on'); renderCaptions();">Selfie</button>
+        <button class="f-chip" onclick="setCategory('travel'); this.parentElement.querySelectorAll('.f-chip').forEach(c => c.classList.remove('on')); this.classList.add('on'); renderCaptions();">Travel</button>
+        <button class="f-chip" onclick="setCategory('food'); this.parentElement.querySelectorAll('.f-chip').forEach(c => c.classList.remove('on')); this.classList.add('on'); renderCaptions();">Food</button>
+        <button class="f-chip" onclick="setCategory('friends'); this.parentElement.querySelectorAll('.f-chip').forEach(c => c.classList.remove('on')); this.classList.add('on'); renderCaptions();">Friends</button>
+        <button class="f-chip" onclick="setCategory('motivation'); this.parentElement.querySelectorAll('.f-chip').forEach(c => c.classList.remove('on')); this.classList.add('on'); renderCaptions();">Motivation</button>
+      </div>
+
+      <div id="captionsList" style="display: grid; gap: var(--spacing-sm);"></div>
+    </section>
+
+    <div class="ad ad-mid container"><!-- Google AdSense Mid 728x90 --></div>
+
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-left">
+        <div class="logo" style="margin: 0; font-size: 14px;">
+          <div class="logo-dot" style="width: 5px; height: 5px;"></div>
+          Instant Tools Hub
+        </div>
+        <span>&copy; 2025 All rights reserved</span>
+      </div>
+      <div class="footer-right">
+        <a href="../GUIDE.html">Beginner Guide</a>
+        <a href="../support.html">Support</a>
+        <a href="../community.html">Community</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="ad-sticky"><!-- Google AdSense Sticky 320x50 --></div>
+
+  <script src="../main.js"></script>
+  <script>
+    const captions = {
+      selfie: ['Feeling myself 💅', 'Just me time ✨', 'Confidence is key 🔑', 'Love myself first 💕', 'Glow up mode ⚡'],
+      travel: ['Adventure awaits 🌍', 'Passport full 🧳', 'Chasing sunsets 🌅', 'Lost but found 🗺️', 'Wanderlust mode ✈️'],
+      food: ['Food is my love 🍕', 'Eating good ✨', 'Taste of happiness 🍴', 'Foodies unite 👀', 'Good food vibes 🤤'],
+      friends: ['Squad goals 👯', 'These are my favorites 💕', 'Life with friends 🥰', 'Always together 👫', 'Besties for life 💫'],
+      motivation: ['Keep growing 📈', 'Hustle hard 💪', 'You got this 🔥', 'Level up 🚀', 'Blessed & grateful 🙏']
+    };
+
+    let currentCat = 'all';
+
+    function setCategory(cat) {
+      currentCat = cat;
+    }
+
+    function renderCaptions() {
+      const list = document.getElementById('captionsList');
+      list.innerHTML = '';
+
+      let caps = currentCat === 'all' ? Object.values(captions).flat() : captions[currentCat] || [];
+
+      caps.forEach((cap, idx) => {
+        const div = document.createElement('div');
+        div.className = 'content-item';
+        div.innerHTML = `
+          <div class="content-text">${cap}</div>
+          <button class="btn btn-sm btn-neon" onclick="copyText('${cap.replace(/'/g, "\\'")}')">Copy</button>
+        `;
+        list.appendChild(div);
+      });
+    }
+
+    renderCaptions();
+  </script>
+</body>
+</html>
