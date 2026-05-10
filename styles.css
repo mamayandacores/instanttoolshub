@@ -1,9 +1,9 @@
 /* ============================================================================
    INSTANT TOOLS HUB — Global Styles
-   Premium Luxury Dark Editorial Design
+   Premium Clean Dark Design with Professional Typography
    ============================================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital@0;1&family=Sora:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 /* ============================================================================
    CSS CUSTOM PROPERTIES (Color System, Typography, Spacing)
@@ -29,11 +29,11 @@
   --border-light: #2a2a33;
   --wire-color: #1a1a1f;
 
-  --font-display: 'Bebas Neue', sans-serif;
-  --font-body: 'Outfit', sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
-  --font-serif: 'Playfair Display', serif;
-  --font-friendly: 'Sora', sans-serif;
+  --font-heading: 'Poppins', sans-serif;
+  --font-accent: 'Space Grotesk', sans-serif;
 
   --radius-sm: 4px;
   --radius-md: 8px;
@@ -382,15 +382,15 @@ nav {
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(48px, 8vw, 120px);
-  font-weight: 700;
-  letter-spacing: 8px;
-  line-height: 1;
+  font-size: clamp(42px, 7vw, 100px);
+  font-weight: 800;
+  letter-spacing: 2px;
+  line-height: 1.2;
   margin-bottom: var(--spacing-lg);
-  color: var(--text-primary);
-  -webkit-text-stroke: 1px var(--color-neon);
-  text-stroke: 1px var(--color-neon);
+  color: var(--color-neon);
+  text-transform: uppercase;
   animation: fadeUp 0.8s ease-out;
+  font-weight: 700;
 }
 
 .hero-subtitle {
